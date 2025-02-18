@@ -136,6 +136,7 @@ func (s *handler) forwardClientToServer(src grpc.ClientStream, dst grpc.ServerSt
 				ret <- err
 				break
 			}
+			f.Reset()
 		}
 	}()
 	return ret
@@ -154,6 +155,7 @@ func (s *handler) forwardServerToClient(src grpc.ServerStream, dst grpc.ClientSt
 				ret <- err
 				break
 			}
+			f.Reset()
 		}
 	}()
 	return ret
